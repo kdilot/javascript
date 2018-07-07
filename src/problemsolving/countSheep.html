@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // My solution
+        var countSheep = function (num) {
+            if (parseInt(num)) {
+                var str = '';
+                for (i = 1; i <= num; i++) {
+                    str += i + ' sheep...';
+                }
+                return str;
+            }
+        }
+        console.log(countSheep(4));
+
+        // Good solution(used let and ${})
+        /* 
+            let is faster than var and scope to the block
+        */
+        var countSheep = function (num) {
+            if (parseInt(num)) {
+                let str = "";
+                for (let i = 1; i <= num; i++) { str += `${i} sheep...`; }
+                return str;
+            }
+        }
+        console.log(countSheep(4));
+    </script>
+</body>
+
+</html>
