@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = ['b','c','d'];
+		console.log(arr);
+		arr.push('e');	// add element
+		console.log(arr);
+
+		arr = arr.concat(['f','g']);	// add array
+		console.log(arr);
+
+		arr.unshift('a');	// add at first
+		console.log(arr);
+
+		arr.splice(1, 0, 'z');	// add to specified
+		console.log(arr);		
+
+		arr.shift();	// delete first
+		console.log(arr);
+		arr.pop();		// delete last
+		console.log(arr);
+
+		arr.sort();
+		console.log(arr);
+		arr.reverse();
+		console.log(arr);
+	</script>
+</body>
+</html>
