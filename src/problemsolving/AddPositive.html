@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Answer : 20
+
+        // My solution
+        var arr = [1, -4, 7, 12];
+        function positiveSum(arr) {
+            let sum = 0;
+            for (key in arr) {
+                if (arr[key] > 0) sum += arr[key];
+            }
+            return sum;
+        }
+
+        // Good solution(used reduce)
+        function positiveSum(arr) {
+            return arr.reduce((a, b) => a + (b > 0 ? b : 0), 0);
+        }
+
+        console.log(positiveSum(arr));
+         
+    </script>
+</body>
+
+</html>
