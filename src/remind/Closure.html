@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function movie(title) {
+			return {
+				get : function() {
+					return title;
+				},
+				set : function(_title) {
+					if(typeof _title === 'string') {
+						title = _title;
+					}
+				}
+			}
+		}
+		movie1 = movie('Saw');
+		movie2 = movie('Car');
+
+		console.log(movie1.get());	//	Saw
+		console.log(movie2.get());	//	Car
+
+		movie1.set('Saw2');
+		movie2.set('Car2');
+
+		console.log(movie1.get());	//	Saw2
+		console.log(movie2.get());	//	Car2
+	</script>
+</body>
+</html>
