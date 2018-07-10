@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		// Object
+		var person = {};
+		person.name = 'Tom';
+		person.introduce = function() {
+			return 'My name is ' + this.name;
+		}
+		/*
+		var person = {
+			'name' : 'Tom',
+			'introduce' : function() {
+				return 'My name is ' + this.name;
+			}
+		}
+		*/
+		// console.log(person.introduce());
+
+
+		// Constructor
+		function Person(name) {
+			this.name = name;
+			this.introduce = function() {
+				return 'My name is ' + this.name;	
+			}
+		}
+		var p1 = new Person('Tom');
+		console.log(p1.introduce());
+
+		var p2 = new Person('Jerry');
+		console.log(p2.introduce());
+
+	</script>
+</body>
+</html>
