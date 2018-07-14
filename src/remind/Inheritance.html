@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Person(name) {
+			this.name = name;
+		}
+		Person.prototype.name = null;
+		Person.prototype.introduce = function() {
+			return 'My name is ' + this.name;
+		}
+
+		function Person1(name) {
+			this.name = name;
+		}
+		Person1.prototype = new Person();
+		Person1.prototype.address = function() {
+			return 'US';
+		}
+		function Person2(name) {
+			this.name = name;
+		}
+		Person2.prototype = new Person();
+		Person2.prototype.age = function() {
+			return '20';
+		}
+
+		var p1 = new Person1('Tom');	
+		console.log(p1.introduce());
+		console.log(p1.address());
+		
+		var p2 = new Person2('Jerry');	
+		console.log(p2.introduce());
+		console.log(p2.age());
+	</script>
+</body>
+</html>
