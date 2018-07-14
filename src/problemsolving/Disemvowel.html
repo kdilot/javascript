@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //  remove all of the vowels
+
+        // My solution
+        function disemvowel(str){
+            return str.replace(/([aeiou])+/gi, '');
+        }
+                
+        // Good solution(another way to make function)
+        disemvowel = str => str.replace(/[aeiou]/gi,'');
+
+        disemvowel('This website is for losers LOL!');  //  Ths wbst s fr lsrs LL!
+
+    </script>
+</body>
+
+</html>
