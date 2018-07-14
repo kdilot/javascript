@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // My solution
+        function findUnique(numbers) {
+            let arr = [], num = 0;
+            numbers.forEach(element => (arr[element] ? arr[element] += 1 : arr[element] = 1));
+            for (key in arr) {
+                arr[key] == 1 ? num = key : ''
+            }
+            return num;
+        }
+
+        // Good solution(using reduce and ^)
+        function findUnique(numbers) {
+            return numbers.reduce((a, b) => a ^ b);
+        }
+
+        findUnique([1, 8, 4, 4, 6, 1, 8]);
+    </script>
+</body>
+
+</html>
