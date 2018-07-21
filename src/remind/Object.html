@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = new Object();
+		obj['English'] = 90;
+		obj['Math'] = 80;
+		obj['History'] = 70;
+
+		console.log(obj);
+		console.log(obj['English']);
+		console.log(obj.Math);
+
+		for(key in obj) {
+			console.log('Key = ' + key + ', Value = ' + obj[key]);
+		}
+
+
+		// Object.keys()
+		var arr = ['a', 'b', 'c'];
+		console.log('Object.keys(arr) ', Object.keys(arr));
+
+		// Object.prototype.toString()
+		var o = new Object();
+		console.log('o.toString() ', o.toString());
+
+		var arr2 = new Array(1,2,3);
+		console.log('arr2.toString() ', arr2.toString());
+	</script>
+</body>
+</html>
