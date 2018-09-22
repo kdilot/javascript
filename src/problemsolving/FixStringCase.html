@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        solve("coDe") = "code".Lowercase characters > uppercase.Change only the "D" to lowercase.
+        solve("CODe") = "CODE".Uppercase characters > lowecase.Change only the "e" to uppercase.
+        solve("coDE") = "code".Upper == lowercase.Change all to lowercase.
+        */
+
+        // My solution
+        function solve(s) {
+            let lower = s.match(/[a-z]/g).length;
+            lower - (s.length - lower) >= 0 ? s = s.toLowerCase() : s = s.toUpperCase();
+            return s;
+        }
+
+        // Good solution(another mehtod, using String.replace)
+        const solve = s => s.replace(/[A-Z]/g, '').length < s.length / 2 ? s.toUpperCase() : s.toLowerCase()
+
+
+
+    </script>
+</body>
+
+</html>
