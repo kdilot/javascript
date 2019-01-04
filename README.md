@@ -2,4 +2,4 @@
 
 src / programsolving
 - - -
-> codewars (practice code) https://www.codewars.com
+> codewars (code practice) https://www.codewars.com
