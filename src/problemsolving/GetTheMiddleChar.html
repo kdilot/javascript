@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        Kata.getMiddle("test") should return "es"
+        Kata.getMiddle("testing") should return "t"
+        Kata.getMiddle("middle") should return "dd"
+        Kata.getMiddle("A") should return "A"
+        */
+
+        // My solution
+        function getMiddle(char) {
+            const len = char.length
+            return len % 2 ? char.charAt(Math.floor(len / 2)) : char.charAt(Math.floor(len / 2) - 1) + char.charAt(Math.floor(len / 2))
+        }
+
+        // Good solution(using array.slice)
+        function getMiddle(char) {
+            return char.slice((char.length - 1) / 2, char.length / 2 + 1)
+        }
+
+        console.log(getMiddle(`middle`))
+
+    </script>
+</body>
+
+</html>
