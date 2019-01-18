@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")
+        // =>  WE ARE THE CHAMPIONS MY FRIEND
+        */
+
+        // My solution
+        function songDecoder(song) {
+            return song.replace(/(WUB){1,}/g, ' ').trim()
+        }
+
+        // Good solution(sort)
+        function songDecoder(song) {
+            return song.replace(/(WUB)+/g, " ").trim()
+        }
+
+        document.write(songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"))
+
+    </script>
+</body>
+
+</html>
