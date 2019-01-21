@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        // m = 371 -> 37 − (2×1) -> 37 − 2 = 35
+
+        // seven(371) should return [35, 1]
+        // seven(1603) should return [7, 2]
+        // seven(477557101) should return [28, 7]
+        */
+
+        // My solution
+        function seven(m) {
+            let number = String(m)
+            for (var step = 0; number.length > 2; step++) {
+                number = String(number.slice(0, -1) - (2 * number.slice(-1)))
+            }
+            return [Number(number), step]
+        }
+
+        // Good solution(using Math.floor)
+        function seven(m) {
+            var i = 0
+            while (m.toString().length > 2) {
+                m = Math.floor(m / 10) - (m % 10) * 2
+                i++
+            }
+            return [m, i]
+        }
+
+        document.write(seven(477557101))
+
+    </script>
+</body>
+
+</html>
