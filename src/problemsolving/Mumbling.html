@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        accum("abcd") -> "A-Bb-Ccc-Dddd"
+        accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+        accum("cwAt") -> "C-Ww-Aaa-Tttt"
+        */
+
+        // My solution
+        function accum(s) {
+            return s.split('').map((m, index) => `${m.toUpperCase()}${m.toLowerCase().repeat(index)}`).join('-')
+        }
+
+        document.write(accum("HbideVbxncC"))
+
+    </script>
+</body>
+
+</html>
