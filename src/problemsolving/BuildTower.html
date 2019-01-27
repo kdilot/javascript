@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        6 floor
+        [
+        '     *     ', 
+        '    ***    ', 
+        '   *****   ', 
+        '  *******  ', 
+        ' ********* ', 
+        '***********'
+        ]
+        */
+
+        // My solution
+        function towerBuilder(nFloors) {
+            arr = []
+            for (let i = 1; i <= nFloors; i++) {
+                arr.push(`${' '.repeat(nFloors - (i))}${'*'.repeat(1 + 2 * (i - 1))}${' '.repeat(nFloors - (i))}`)
+            }
+            console.log(arr)
+        }
+
+        // Good solution(map)
+        function towerBuilder(nFloors) {
+            return [...Array(nFloors)].map((_, i) => " ".repeat(nFloors - 1 - i) + "*".repeat(i * 2 + 1) + " ".repeat(nFloors - 1 - i))
+        }
+
+        document.write(towerBuilder(6))
+
+    </script>
+</body>
+
+</html>
