@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        ['a','b','c','d','f'] -> 'e'
+        ['O','Q','R','S'] -> 'P'
+        */
+
+        // My solution
+        function findMissingLetter(array) {
+            return String.fromCharCode(array.filter((f, i) => i > 0 && f.charCodeAt() - array[i - 1].charCodeAt() === 2)[0].charCodeAt() - 1)
+        }
+
+        document.write(findMissingLetter(['O', 'Q', 'R', 'S']))
+
+    </script>
+</body>
+
+</html>
