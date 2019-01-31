@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        A triangle number is a number where n objects form an equilateral triangle (it's a bit hard to explain).
+        For example, 6 is a triangle number because you can arrange 6 objects into an equilateral triangle
+          1
+         2 3
+        4 5 6
+
+           1
+          2 3
+         4 5 6
+        7 8
+        */
+
+        // My solution
+        function isTriangleNumber(number) {
+            if (number >= 0 && number === Math.floor(number)) {
+                for (let i = 1, re = 0; re <= number; i++) {
+                    re = re + i
+                    if (re === number || number === 0) return true
+                }
+            }
+            return false
+        }
+
+        // Good solution(Math.sqrt)
+        function isTriangleNumber(number) {
+            return Math.sqrt(1 + 8 * number) % 1 === 0
+        }
+
+        document.write(isTriangleNumber(6))
+
+    </script>
+</body>
+
+</html>
