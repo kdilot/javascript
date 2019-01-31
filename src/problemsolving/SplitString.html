@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        solution('abc') // should return ['ab', 'c_']
+        solution('abcdef') // should return ['ab', 'cd', 'ef']
+        */
+
+        // My solution
+        function solution(str) {
+            let arr = str.split('')
+            for (let i = 0; i <= Math.round(str.split('').length / 2) - 1; i++) {
+                arr.splice(i, 1, `${arr[i]}${i * 2 === str.split('').length - 1 ? '_' : arr[i + 1]}`)
+                arr.splice(i + 1, 1)
+            }
+            return arr
+        }
+
+        // Good solution(match)
+        function solution(str) {
+            return (str.length % 2 ? str + '_' : str).match(/../g)
+        }
+
+        document.write(solution('abcdefg'))
+
+    </script>
+</body>
+
+</html>
