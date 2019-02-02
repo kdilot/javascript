@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
+        toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
+        */
+
+        // My solution
+        function toCamelCase(str) {
+            return str.split(/_|-/).map((m, i) => i !== 0 ? m.charAt(0).toUpperCase() + m.slice(1) : m).join('')
+        }
+
+        // Good solution(replace)
+        function toCamelCase(str) {
+            return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase())
+        }
+
+        document.write(toCamelCase('the-stealth-warrior'))
+
+    </script>
+</body>
+
+</html>
