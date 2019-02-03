@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // iqTest("2 4 7 8 10") => 3 // Third number is odd, while the rest of the numbers are even
+        // iqTest("1 2 1 1") => 2 // Second number is even, while the rest of the numbers are odd
+
+        // My solution
+        function iqTest(numbers) {
+            const arr = numbers.split(' ').map(m => m % 2)
+            return arr.filter(child => child === 0).length === 1 ? arr.findIndex(index => index === 0) + 1 : arr.findIndex(index => index === 1) + 1
+        }
+
+        // Good solution(reduce)
+        function iqTest(numbers) {
+            const nums = numbers.split(" ").map(x => x % 2)
+            const sum = nums.reduce((a, b) => a + b)
+            const target = sum > 1 ? 0 : 1
+
+            return nums.indexOf(target) + 1
+        }
+
+        document.write(iqTest("1 2 2"))
+
+    </script>
+</body>
+
+</html>
