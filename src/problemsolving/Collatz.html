@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        n = { n / 2 for even n ;
+        3n + 1 for odd n }
+
+        collatz(4); // should return "4->2->1"
+        collatz(3); // should return "3->10->5->16->8->4->2->1"
+        */
+
+        // My solution
+        function collatz(n) {
+            let arr = [n]
+            for (let num = n; num > 1; arr.push(num)) {
+                num % 2 === 0 ? num = num / 2 : num = num * 3 + 1
+            }
+            return arr.join('->')
+        }
+
+        // Good solution(Recursion)
+        function collatz(n) {
+            if (n === 1) return "1"
+            return n + "->" + collatz(n % 2 === 0 ? n / 2 : 3 * n + 1)
+        }
+
+        document.write(collatz(3))
+
+    </script>
+</body>
+
+</html>
