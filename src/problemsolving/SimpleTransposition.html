@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        Simple transposition is a basic and simple cryptography technique. 
+        We make 2 rows and put first a letter in the Row 1, the second in the Row 2, third in Row 1 and so on until the end. 
+        Then we put the text from Row 2 next to the Row 1 text and thats it.
+
+        For example if the text to encrypt is: "Simple text", the 2 rows will be:
+        So the result string will be: "Sml etipetx"
+        */
+
+        // My solution
+        function simpleTransposition(text) {
+            const arr = text.split('')
+            for (let i = 2; i < arr.length; i++) {
+                arr[i % 2] = arr[i % 2].concat(arr[i])
+            }
+            return arr.splice(0, 2).join('')
+        }
+
+        document.write(simpleTransposition('Sample text'))
+
+    </script>
+</body>
+
+</html>
