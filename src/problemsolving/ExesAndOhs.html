@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        XO("ooxx") => true
+        XO("xooxx") => false
+        XO("ooxXm") => true
+        XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+        XO("zzoo") => false
+        */
+
+        // My solution
+        function XO(str) {
+            return (str.match(/x/gi)||[]).length === (str.match(/o/gi)||[]).length
+        }
+
+        document.write(XO("xxoo"))
+        
+    </script>
+</body>
+
+</html>
