@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function solution(genres, plays) {
+      let list = genres.map((m, i) => {
+        return {
+          index: i,
+          genre: m,
+          play: plays[i],
+        }
+      })
+      let rank = genres.filter((f, i) => genres.indexOf(f) === i).map(m => {
+        return {
+          genre: m,
+          point: list.filter(_f => _f.genre === m).map(_m => _m.play).reduce((a, b) => a + b, 0)
+        }
+      }).sort((a, b) => b.point - a.point).map(m => m.genre)
+
+      let answer = rank.map(m => list.filter(_f => _f.genre === m).sort((a, b) => b.play - a.play).slice(0, 2).map(_m => _m.index)).reduce((_a, _b) => _a.concat(_b))
+      console.log(answer)
+      return answer
+    }
+    let genres = ['classic', 'pop', 'classic', 'classic', 'pop']
+    let plays = [500, 600, 150, 800, 2500]
+    solution(genres, plays)
+        // [4, 1, 3, 0]
+  </script>
+</body>
+
+</html>
