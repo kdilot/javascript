@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [탑]]
+    // [6, 9, 5, 7, 4][0, 0, 2, 2, 4]
+    // [3, 9, 9, 3, 5, 7, 2][0, 0, 0, 3, 3, 3, 6]
+    // [1, 5, 3, 6, 7, 6, 5][0, 0, 2, 0, 0, 5, 6]
+
+    function solution(heights) {
+      let answer = []
+      for (let i = heights.length - 1; i >= 0; i--) {
+        for (let j = i - 1; j >= 0; j--) {
+          if (heights[i] < heights[j]) {
+            answer.push(j + 1)
+            break;
+          }
+          if (j === 0) {
+            answer.push(0)
+          }
+        }
+      }
+      answer.push(0)
+      // console.log(answer.reverse())
+      return answer.reverse()
+    }
+
+    let heights = [3, 9, 9, 3, 5, 7, 2]
+    solution(heights)
+
+    /*
+    function solution(heights) {
+      return heights.map((v, i) => {
+        while (i) {
+          i--;
+          if (heights[i] > v) {
+            return i + 1;
+          }
+        }
+        return 0;
+      });
+    }
+    */
+
+  </script>
+</body>
+
+</html>
