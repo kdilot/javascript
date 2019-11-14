@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [가장 큰 수]
+    // [6, 10, 2]	6210
+    // [3, 30, 34, 5, 9]	9534330
+
+    function solution(numbers) {
+      let answer = numbers.sort((a, b) => (String(a) + String(b)) - (String(b) + String(a))).reverse().join('')
+      return Number(answer) === '0' ? 0 : answer
+      // console.log(Number(answer) === 0 ? '0' : answer)
+    }
+
+    solution([3, 30, 34, 5, 9])
+
+
+    // function solution(numbers) {
+    //   let answer = numbers.sort((a, b) => `${b}${a}` - `${a}${b}`).join('');
+    //   return answer[0] === '0' ? '0' : answer;
+    // }
+
+
+  </script>
+</body>
+
+</html>
