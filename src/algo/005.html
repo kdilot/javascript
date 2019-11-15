@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [쇠막대기]
+    // ()(((()())(())()))(())	17
+
+    function solution(arrangement) {
+      let answer = 0
+      let stack = []
+      for (let i in arrangement) {
+        if (arrangement[i] === `(`) {
+          stack.push(arrangement[i])
+        } else if (arrangement[i] === `)`) {
+          stack.pop()
+          if(arrangement[i-1] === `(`) {
+            answer += stack.length
+          } else {
+            answer++
+          }
+        }
+      }
+      // console.log(answer)
+      return answer
+    }
+    
+    solution(`()(((()())(())()))(())`)
+
+
+  </script>
+</body>
+
+</html>
