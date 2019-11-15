@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [구명보트]
+    // [70, 50, 80, 50]	100	3
+    // [70, 80, 50]	100	3
+
+    function solution(people, limit) {
+      people.sort((a, b) => a - b)
+      let answer = 0
+      while (people.length > 0) {
+        if (people[0] + people[people.length - 1] <= limit) {
+          people.splice(0, 1)
+        }
+        people.pop()
+        answer++
+      }
+      console.log(answer)
+      return answer
+    }
+    solution([70, 50, 80, 50, 100], 100)
+
+    // efficiency 0%
+    /*
+    function solution(people, limit) {
+      let group = people.sort((a, b) => a - b)
+      let answer = 0
+      while (group.length > 0) {
+        let person = group.pop()
+        if (person === limit) answer++
+        else if (person < limit) {
+          for (let i = group.length - 1; i >= 0; i--) {
+            if (person + group[i] <= limit) {
+              group.splice(i, 1)
+              break;
+            }
+          }
+          answer++
+        }
+      }
+      return answer
+    }
+    */
+
+
+  </script>
+</body>
+
+</html>
