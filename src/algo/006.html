@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [기능개발]
+    // [93,30,55],[1,30,5]	[2,1]
+
+    function solution(progresses, speeds) {
+      const answer = []
+      let speed = 0
+      // let day = progresses.map((m, i) => Math.ceil((100 - m) / speeds[i])) // create day at once with Array.map
+      progresses.forEach((e, i) => {
+        let day = Math.ceil((100 - e) / speeds[i])  //  move to out of forEach
+        if (answer.length === 0) {
+          speed = day
+          answer.push(1)
+        }
+        else {
+          if (day <= speed) {
+            answer[answer.length - 1]++
+          } else {
+            speed = day
+            answer.push(1)
+          }
+        }
+      })
+      // console.log(answer)
+      return answer
+    }
+
+    solution([93, 30, 55], [1, 30, 5])
+
+
+  </script>
+</body>
+
+</html>
