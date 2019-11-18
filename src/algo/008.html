@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [큰 수 만들기]
+    // 1924	2,2	=> 94
+    // 1231234	3,4 =>	3234
+    // 4177252841	4,6 =>	775841
+
+    function solution(number, erase) {  // need : case 10 timeout
+      let answer = []
+      let index = 0
+      while (answer.length < number.length - erase) {
+        for (let i = 0; i < number.length - erase; i++) {
+          let max = false
+          for (let j = index; j <= erase + i; j++) {
+            if (max === 9) break
+            max = number[j] * 1 >= max ? number[j] * 1 : max
+          }
+          if (max) {
+            answer.push(max)
+            index = number.indexOf(max, index) + 1
+          }
+        }
+      }
+      console.log(answer)
+      return answer.join('')
+    }
+    solution(`1231234`, 3)
+
+  </script>
+</body>
+
+</html>
