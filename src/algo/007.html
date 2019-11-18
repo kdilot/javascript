@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [짝지어 제거하기]
+    // s	result
+    // baabaa	1
+    // cdcd	0
+
+    function solution(s) {
+      let arr = []
+      for (let value of s) {
+        if (arr.length === 0) {
+          arr.push(value)
+        } else {
+          let before = arr.pop()
+          if (value !== before) {
+            arr.push(before)
+            arr.push(value)
+          }
+        }
+      }
+      return arr.length === 0 ? 1 : 0
+    }
+
+    solution(`baabaab`)
+
+
+  </script>
+</body>
+
+</html>
