@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [스킬트리]
+    // skill  skill_trees return
+    // "CBD" ["BACDE", "CBADF", "AECB", "BDA"]	2
+
+    function solution(skill, skill_trees) {
+      let answer = 0
+      skill_trees.forEach((tree) => {
+        let check = skill.length
+        let index = 0
+        for (let i in skill) {
+          let position = tree.indexOf(skill[i])
+          if (position === -1) {
+          } else {
+            if (index > position + 1 || i > 0 && tree.indexOf(skill[i - 1]) === -1) {
+              check--
+            }
+            index = position + 1
+          }
+        }
+        if (check === skill.length) answer++
+      })
+      return answer
+    }
+
+    solution("CBD", ["BACDE", "CBADF", "AECB", "BDA"])
+
+    // other solution
+    // function solution(skill, skill_trees) {
+    //   var answer = 0;
+    //   var regex = new RegExp(`[^${skill}]`, 'g');
+
+    //   return skill_trees
+    //     .map((x) => x.replace(regex, ''))
+    //     .filter((x) => {
+    //       return skill.indexOf(x) === 0 || x === "";
+    //     })
+    //     .length
+    // }
+
+  </script>
+</body>
+
+</html>
