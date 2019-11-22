@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [소수 만들기]
+    // nums	result
+    // [1, 2, 3, 4]	1
+    // [1, 2, 7, 6, 4]	4
+
+    // 입출력 예 #1
+    // [1, 2, 4]를 이용해서 7을 만들 수 있습니다.
+    
+    // 입출력 예 #2
+    // [1, 2, 4]를 이용해서 7을 만들 수 있습니다.
+    // [1, 4, 6]을 이용해서 11을 만들 수 있습니다.
+    // [2, 4, 7]을 이용해서 13을 만들 수 있습니다.
+    // [4, 6, 7]을 이용해서 17을 만들 수 있습니다.
+
+    function solution(nums) {
+      let arr = []
+      let len = nums.length
+      for (let i = 0; i < len - 2; i++) {
+        for (let j = i + 1; j < len - 1; j++) {
+          for (let k = j + 1; k < len; k++) {
+            arr.push([nums[i], nums[j], nums[k]])
+          }
+        }
+      }
+      return arr.filter(f => {
+        let _num = f.reduce((a, b) => a + b, 0)
+        let count = 0
+        for (let n = 2; n <= _num; n++) {
+          if (_num % n === 0) count++
+        }
+        return count === 1 ? true : false
+      }).length
+    }
+
+    solution([1, 2, 7, 6, 4])
+
+  </script>
+</body>
+
+</html>
