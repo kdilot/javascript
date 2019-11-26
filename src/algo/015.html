@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [올바른 괄호]
+    // s	answer
+    // ()()  true
+    // (())()  true
+    // )()(  false
+    // (()(  false
+
+    function solution(s) {
+      let answer = 0
+      for (let i of s) {
+        if (i === '(') answer++
+        else {
+          if (answer === 0) return false
+          else answer--
+        }
+      }
+      return answer === 0
+    }
+
+    // function solution(s) {   // efficiency 0%
+    //   while (s.length > 0) {
+    //     let check = s.replace(`()`, ``)
+    //     if (check === s) {
+    //       return s ? false : true
+    //     } else {
+    //       s = check
+    //     }
+    //   }
+    //   return true
+    // }
+
+
+    solution(`()()`)
+
+  </script>
+</body>
+
+</html>
