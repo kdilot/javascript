@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [2 x n 타일링]
+    // n	result
+    // 4	5
+
+    function solution(n) {
+      let tile_one = 1
+      let tile_two = 2
+      let answer = 0
+      if (n <= 3) return n
+      for (let i = 3; i < n; i++) {
+        answer = (tile_one + tile_two) % 1000000007
+        tile_one = tile_two
+        tile_two = answer
+      }
+      return (tile_one + tile_two) % 1000000007
+    }
+
+    solution(6)
+
+    // other solution
+    // function solution(n) {
+    //   const arr = [0, 1, 2]
+    //   for (let i = 3; i <= n; i++) {
+    //     arr[i] = (arr[i - 2] + arr[i - 1]) % 1000000007
+    //   }
+
+    //   return arr[n]
+    // }
+
+  </script>
+</body>
+
+</html>
