@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [H-Index]
+    // citations	return
+    // [3, 0, 6, 1, 5]	3
+
+    function solution(citations) {
+      let cnt = 0
+      let desc = citations.sort((a, b) => b - a)
+      for (let i = 0; i < citations.length; i++) {
+        if (i >= desc[i]) {
+          return i
+        }
+      }
+      return citations.length
+    }
+
+    solution([2, 2, 2])
+
+  </script>
+</body>
+
+</html>
