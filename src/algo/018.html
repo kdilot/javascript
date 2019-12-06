@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [소수 찾기]
+    // numbers	return
+    // `17`	3
+    // `011`	2
+
+    function solution(numbers) {
+      let max = numbers.split('').sort((a, b) => b - a).join('')
+      let answer = []
+      for (let i = 2; i <= max; i++) {
+        answer[i] = i
+      }
+      for (let i = 2; i <= max; i++) {
+        for (let j = 2 * i; j <= max; j += i) {
+          answer[j] = 0
+        }
+      }
+      return answer.filter(f => f > 0).filter(_f => {
+        let arr = numbers.split('')
+        for (let i of String(_f).split('')) {
+          const index = arr.indexOf(i)
+          if (index === -1) return false
+          else {
+            arr.splice(index, 1)
+          }
+        }
+        return true
+      }).length
+    }
+
+    solution(`17`)
+
+  </script>
+</body>
+
+</html>
