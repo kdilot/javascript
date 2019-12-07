@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [N개의 최소공배수]
+    // arr	result
+    // [2,6,8,14]	168
+    // [1,2,3]	6
+
+    function solution(numbers) {
+      let answer = numbers[0]
+      for (let i = 1; i < numbers.length; i++) {
+        let num = 2
+        while (true) {
+          if (num % answer === 0 && num % numbers[i] === 0) {
+            answer = num
+            break
+          }
+          num++
+        }
+      }
+      return answer
+    }
+
+    solution([2, 6, 8, 14])
+
+  </script>
+</body>
+
+</html>
