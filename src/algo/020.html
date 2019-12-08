@@ -1,0 +1,25 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // [수박수박수박수박수박수?]
+    // n	return
+    // 3	수박수
+    // 4	수박수박
+
+    function solution(n) {
+      return `수박`.repeat(Math.round(n / 2)).slice(0, n % 2 === 0 ? n : -1)
+    }
+
+    solution(4)
+
+  </script>
+</body>
+
+</html>
