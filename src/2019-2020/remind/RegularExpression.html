@@ -1,0 +1,44 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var pattern = /a/;
+		var pattern2 = new RegExp('a');		// pattern = pattern2
+
+		console.log(pattern.exec('abcde'));	//	[a]
+
+		pattern = /a./;
+		console.log(pattern.exec('abcde'));	//	[ab]
+
+		pattern = /a/;
+		console.log(pattern.exec('bcdef'));	//	[null]
+		console.log(pattern.test('abcde'));	//	[true]
+		console.log(pattern.test('bcdef'));	//	[false]
+
+		var str = 'abcde';
+		console.log(str.match(pattern));	//	[a]
+		console.log(str.replace(pattern, 'A'));	//	[Abcde]
+
+		str = 'Abcde';
+		var	str2 = /a/;
+		var str3 = /a/i;
+		console.log(str.match(str2));		//	[null]
+		console.log(str.match(str3));		//	[A]
+
+		str = 'abcdea';
+		str2 = /a/;
+		console.log(str.match(str2));		//	[a]
+		str2 = /a/g;
+		console.log(str.match(str2));		//	[a][a]
+
+		var pattern = /(\w+)\s(\w+)/;		
+		var str = "Hello world";
+		var result = str.replace(pattern, "$2, $1");	//	world, Hello
+		console.log(result);
+	</script>
+</body>
+</html>
+

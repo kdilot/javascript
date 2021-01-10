@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function a() {
+			var i = 0;
+		}
+		for(var i = 0; i < 5; i++) {
+			a();
+			// console.log(i);	// 01234
+		}
+		
+		function b() {
+			var j = 0;
+		}
+		for(var j = 0; j < 5; j++) {
+			b();
+			// console.log(j);	// infinite loop
+		}
+	</script>
+</body>
+</html>
